@@ -48,21 +48,25 @@ class ChangePos
         
         void propose(Segment molecules[n_molecules][n_segments], double com[n_molecules][3])
         {   
-            //if (n_segments >= 4)
-            //{
-            //    style = floor(4 * uniform());
-            //}
-            //else if (n_segments >= 3)
-            //{
-            //    style = floor(3 * uniform());
-            //}
-            //else
-            //{
-            //    style = floor(2 * uniform());
-            //}
-            style  = 2 + floor(2 * uniform());
-
-
+            if (n_molecules!=1)
+            {
+                if (n_segments >= 4)
+                {
+                    style = floor(4 * uniform());
+                }
+                else if (n_segments >= 3)
+                {
+                    style = floor(3 * uniform());
+                }
+                else
+                {
+                    style = floor(2 * uniform());
+                }
+            }
+            else
+            {
+                style  = 2 + floor(2 * uniform());
+            }
             
             if (style == 0)
             {   
